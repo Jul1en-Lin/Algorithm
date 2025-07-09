@@ -59,11 +59,38 @@ public class Test {
         }
     }
 
-    public static void main(String[] args) {
-        int[] tmp = {1,0,2,3,0,4};
-        duplicateZeros(tmp);
-        for (int i = 0; i < tmp.length; i++) {
-            System.out.print(tmp[i]);
+    /**
+     * 快乐数
+     */
+    public static boolean isHappy(int n) {
+        int slow = n;
+        int fast = n;
+        int count = 0;
+        while (count != 811) {
+            slow = fun1(slow);
+            fast = fun1(fun1(fast));
+            count++;
+            if (fast == 1) {
+                return true;
+            }
+            if (slow == fast && slow == 1) {
+                return true;
+            }
         }
+        return false;
+    }
+
+    public static int fun1(int n) {
+        int sum = 0;
+        while (n != 0) {
+            int tmp = n % 10;
+            n /= 10;
+            sum += tmp * tmp;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isHappy(2));
     }
 }
