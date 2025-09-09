@@ -20,6 +20,7 @@ public class Demo1 {
         System.out.println(maxArea(height));
     }
 
+    //有效三角形的个数
     public int triangleNumber(int[] nums) {
         //单调性双指针
         if(nums.length <= 2)
@@ -61,5 +62,23 @@ public class Demo1 {
     }
     public boolean check(int i,int j,int k) {
         return i + j > k;
+    }
+
+    //求和为s的两个数
+    public int[] twoSum(int[] price, int target) {
+        if(price.length <= 2)
+            return null;
+        //双指针
+        int left = 0,right = price.length -1;
+        while(left < right) {
+            if(price[left] + price[right] < target) {
+                left++;
+            }else if (price[left] + price[right] == target) {
+                return new int[]{price[left],price[right]};
+            }else {
+                right--;
+            }
+        }
+        return null;
     }
 }
