@@ -23,6 +23,7 @@ public class Demo1 {
         return list;
     }
 
+<<<<<<< HEAD
     // 滑动窗口
     public List<Integer> findAnagrams2(String s, String p) {
         int lenp = p.length(),lens = s.length();
@@ -104,4 +105,7 @@ public class Demo1 {
         }
         return list;
     }
+=======
+
+>>>>>>> 9a4a6c2f834fd77581f27d345f08a75333ff3b1e
 }
