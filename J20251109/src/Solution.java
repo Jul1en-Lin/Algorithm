@@ -18,4 +18,22 @@ public class Solution {
         }
         return String.valueOf(ss);// 转换为字符串
     }
+<<<<<<< HEAD
+
+    public int findPoisonedDuration(int[] ts, int duration) {
+        int time = 0;
+        for (int i = 0; i < ts.length - 1; i++) {
+            int x = ts[i + 1] - ts[i];
+            if (x >= duration) {
+                time += duration;
+            }else {
+                // x < duration 时候只会中毒他们之间的间隔秒，中毒时间重置
+                time += x;
+            }
+        }
+        time += duration;// 处理最后一位的情况
+        return time;
+    }
+=======
+>>>>>>> fdfbb555d8590b040cff4a000a5cfdf4bc3d2d8a
 }
