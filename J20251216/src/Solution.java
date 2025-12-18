@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.Random;
 
 // 最小 k 个数
 public class Solution {
@@ -8,10 +9,7 @@ public class Solution {
     public int[] smallestK(int[] arr, int k) {
         int[] ret = new int[k];
         Arrays.sort(arr);
-        for (int i = 0; i < k; i++) {
-            ret[i] = arr[i];
-        }
-        return ret;
+        return Arrays.copyOf(arr,k);
     }
 
     // 大根堆排序
